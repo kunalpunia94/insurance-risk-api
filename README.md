@@ -55,6 +55,9 @@ Content-Type: application/json
   "occupation": "private_job"
 }
 ```
+
+---
+
 ## Sample Output
 
 ```json
@@ -71,42 +74,43 @@ Content-Type: application/json
 }
 ```
 
-## Project Structure
-.  
-├── app.py                 # FastAPI entrypoint  
-├── Dockerfile             # Docker container setup  
-├── model/  
-│   └── model.pkl          # Trained ML model  
-├── schema/  
-│   ├── user_input.py      # Input model with derived fields  
-│   └── prediction_response.py  
-├── model/  
-│   └── predict.py         # Prediction logic  
-├── config/  
-│   └── city_tier.py       # Tier 1 and 2 cities  
-├── requirements.txt       # Python dependencies  
+---
 
+## Project Structure
+<pre><code>```text . ├── app.py # FastAPI entrypoint ├── Dockerfile # Docker container setup ├── model/ │ └── model.pkl # Trained ML model ├── schema/ │ ├── user_input.py # Input model with derived fields │ └── prediction_response.py ├── model/ │ └── predict.py # Prediction logic ├── config/ │ └── city_tier.py # Tier 1 and 2 cities ├── requirements.txt # Python dependencies ``` </code></pre>
+
+---
 
 ## Docker Setup
 ### Build Docker Image
 ```
 docker build -t insurance-premium-api .
 ```
+
+---
+
 ### Run Container
 ```
 docker run -d -p 8000:8000 insurance-premium-api
 ```
+
+---
+
 ### Alternatively, pull and run from Docker Hub
 ```
 docker pull kunalpunia94/insurance-premium-api:latest
 docker run -d -p 8000:8000 kunalpunia94/insurance-premium-api:latest
 ```
 
+---
+
 ## AWS Deployment
 
 - Deployed on AWS EC2 with Docker
 - Security group open on port 8000 for public access
 - IP Address: http://13.201.128.6:8000
+
+---
 
 ## API Endpoints
 | Method | Endpoint   | Description               |
@@ -115,6 +119,7 @@ docker run -d -p 8000:8000 kunalpunia94/insurance-premium-api:latest
 | GET    | /health    | Health check + version    |
 | POST   | /predict   | Predict insurance premium |
 
+---
 
 ## Local Testing
 ```
