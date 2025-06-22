@@ -80,6 +80,7 @@ Content-Type: application/json
 ```text
 .
 ├── app.py                 # FastAPI entrypoint  
+├── frontend.py            # Model loading and prediction interface  
 ├── Dockerfile             # Docker container setup  
 ├── model/  
 │   └── model.pkl          # Trained ML model  
@@ -90,7 +91,7 @@ Content-Type: application/json
 │   └── predict.py         # Prediction logic  
 ├── config/  
 │   └── city_tier.py       # Tier 1 and 2 cities  
-├── requirements.txt       # Python dependencies  
+├── requirements.txt       # Python dependencies
 ```
 
 ---
