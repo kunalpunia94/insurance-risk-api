@@ -102,15 +102,18 @@ docker run -d -p 8000:8000 kunalpunia94/insurance-premium-api:latest
 ```
 
 ## AWS Deployment
--Deployed on AWS EC2 with Docker
--Security group open on port 8000 for public access
--IP Address: http://13.201.128.6:8000
+
+- Deployed on AWS EC2 with Docker
+- Security group open on port 8000 for public access
+- IP Address: http://13.201.128.6:8000
 
 ## API Endpoints
-Method	   Endpoint  	Description
-GET	      /	          Welcome message
-GET	      /health	    Health check + model version
-POST	    /predict	  Predict insurance premium
+| Method | Endpoint   | Description               |
+|--------|------------|---------------------------|
+| GET    | /          | Welcome message           |
+| GET    | /health    | Health check + version    |
+| POST   | /predict   | Predict insurance premium |
+
 
 ## Local Testing
 ```
