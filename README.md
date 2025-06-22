@@ -54,4 +54,66 @@ Content-Type: application/json
   "city": "Pune",
   "occupation": "private_job"
 }
+```
+## Sample Output
 
+```json
+{
+  "response": {
+    "predicted_category": "High",
+    "confidence": 0.8432,
+    "class_probabilities": {
+      "Low": 0.01,
+      "Medium": 0.15,
+      "High": 0.84
+    }
+  }
+}
+```
+
+##Project Structure
+.
+├── app.py                    # FastAPI entrypoint
+├── Dockerfile                # Docker container setup
+├── model/
+│   └── model.pkl             # Trained ML model
+├── model/
+│   └── predict.py            # Prediction logic
+├── schema/
+│   ├── user_input.py         # Input model with derived fields
+│   └── prediction_response.py
+├── config/
+│   └── city_tier.py          # Tier 1 and 2 cities
+├── requirements.txt          # Python dependencies
+
+##Docker Setup
+###Build Docker Image
+```
+docker build -t insurance-premium-api .
+```
+###Run Container
+```
+docker run -d -p 8000:8000 insurance-premium-api
+```
+###Alternatively, pull and run from Docker Hub
+```
+docker pull kunalpunia94/insurance-premium-api:latest
+docker run -d -p 8000:8000 kunalpunia94/insurance-premium-api:latest
+```
+
+##AWS Deployment
+-Deployed on AWS EC2 with Docker
+-Security group open on port 8000 for public access
+-IP Address: http://13.201.128.6:8000
+
+##API Endpoints
+Method	   Endpoint  	Description
+GET	      /	          Welcome message
+GET	      /health	    Health check + model version
+POST	    /predict	  Predict insurance premium
+
+##Local Testing
+```
+uvicorn app:app --reload
+```
+Then navigate to http://127.0.0.1:8000/docs to test via Swagger UI.
