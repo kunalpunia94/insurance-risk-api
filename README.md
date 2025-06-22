@@ -77,7 +77,21 @@ Content-Type: application/json
 ---
 
 ## Project Structure
-<pre><code>```text . ├── app.py # FastAPI entrypoint ├── Dockerfile # Docker container setup ├── model/ │ └── model.pkl # Trained ML model ├── schema/ │ ├── user_input.py # Input model with derived fields │ └── prediction_response.py ├── model/ │ └── predict.py # Prediction logic ├── config/ │ └── city_tier.py # Tier 1 and 2 cities ├── requirements.txt # Python dependencies ``` </code></pre>
+```text
+.
+├── app.py                 # FastAPI entrypoint  
+├── Dockerfile             # Docker container setup  
+├── model/  
+│   └── model.pkl          # Trained ML model  
+├── schema/  
+│   ├── user_input.py      # Input model with derived fields  
+│   └── prediction_response.py  
+├── model/  
+│   └── predict.py         # Prediction logic  
+├── config/  
+│   └── city_tier.py       # Tier 1 and 2 cities  
+├── requirements.txt       # Python dependencies  
+```
 
 ---
 
